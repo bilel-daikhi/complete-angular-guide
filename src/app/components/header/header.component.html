@@ -1,0 +1,104 @@
+<div class="jumbotron text-center" style="margin-bottom: 0">
+  <h1><span style="color: blue"> SBSA </span> Angular Recap</h1>
+  <p>Angular demos, Each component has a different section!</p>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container">
+    <a
+      class="navbar-brand"
+      [routerLink]="['/']"
+      [routerLinkActive]="['active']"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#collapsibleNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/observables"
+            routerLinkActive="active"
+            >Observable</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/directives" routerLinkActive="active"
+            >Directives</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/routing" routerLinkActive="active"
+            >Routing</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/forms" routerLinkActive="active"
+            >Forms</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/pipes" routerLinkActive="active"
+            >Pipes</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/http" routerLinkActive="active"
+            >Http Requests</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/dynamic-component"
+            routerLinkActive="active"
+            >Dynamic component</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/animations" routerLinkActive="active"
+            >Animations</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/games" routerLinkActive="active"
+            >Games</a
+          >
+        </li>
+      </ul>
+      <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+        <li *ngIf="isLoggedIn" class="nav-item order-2 order-md-1">
+          <a href="#" class="nav-link" title="settings"
+            ><i class="fa fa-cog fa-fw fa-lg"></i
+          ></a>
+        </li>
+        <li class="dropdown order-1">
+          <button
+            *ngIf="!isLoggedIn"
+            type="button"
+            (click)="goToLogin()"
+            class="btn btn-outline-secondary"
+          >
+            <i class="fa fa-sign-in"></i> Login
+          </button>
+          <button
+            type="button"
+            *ngIf="isLoggedIn"
+            (click)="logout()"
+            class="btn btn-outline-secondary"
+          >
+            <i class="fa fa-sign-out"> </i> Logout
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

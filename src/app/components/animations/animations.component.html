@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-sm-4">
+      <h2>Angular Animations</h2>
+      <h5>Photo of me:</h5>
+      <div class="fakeimg">Fake Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <h3>Some Links</h3>
+      Toggle All Animations <input type="checkbox" [checked]="!animationsDisabled" (click)="toggleAnimations()"/>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link" id="basics" [routerLink]="['/animations/basics']" routerLinkActive="active">Basics</a>
+          <a class="nav-link" id="home" [routerLink]="['/animations/home']" routerLinkActive="active">Home</a>
+          <a class="nav-link" id="about" [routerLink]="['/animations/about']" routerLinkActive="active">About</a>
+          <a class="nav-link" id="open" [routerLink]="['/animations/open-close']" routerLinkActive="active">Open/close</a>
+          <a class="nav-link" id="slider" [routerLink]="['/animations/slider']" routerLinkActive="active">Slider statut</a>
+          <a class="nav-link" id="filter" [routerLink]="['/animations/filter']" routerLinkActive="active">Filter</a>
+          <a class="nav-link" id="hero" [routerLink]="['/animations/heros-group']" routerLinkActive="active">Heros Group</a>
+           
+        </li>
+       
+ 
+      </ul>
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-8" >
+        <div [@routeAnimations]="prepareRoute(outlet)">
+<router-outlet #outlet="outlet"></router-outlet>
+</div>
+</div>
+</div>

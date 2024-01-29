@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-sm-4">
+      <h2>Dynamic Components</h2>
+      <h5>Photo of me:</h5>
+      <div class="fakeimg">Fake Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <h3>Some Links</h3>
+      <p>Lorem ipsum dolor sit ame.</p>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/dynamic-component/declarative']" routerLinkActive="active"   >Declerative Aproach</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/dynamic-component/imperative']" routerLinkActive="active">Imperative Approach</a>
+        </li>
+ 
+      </ul>
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-8">
+<router-outlet></router-outlet>
+</div>
+</div>

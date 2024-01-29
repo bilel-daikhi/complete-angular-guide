@@ -1,0 +1,19 @@
+.square {
+  width: 80px;
+  height: 80px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: auto;
+}
+
+.redColor{
+  background-color: red;
+  color: #FFFFFF;
+}
+.blueColor{
+  background-color: blue;
+  color: #FFFFFF;
+}

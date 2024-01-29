@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <form [formGroup]="signUpForm" (ngSubmit)="handleSubmit()">
+          <div class="form-group" >
+            <label for="username">Username</label>
+            <input type="text" formControlName="username" ngModel id="username" class="form-control">
+         
+            <span *ngIf="!signUpForm.get('username').valid && signUpForm.get('username').touched" class="help-block" style="color: red;">
+              <span *ngIf="signUpForm.get('username').errors['nameIsForbidden']">This name is invalid!</span>
+              <span *ngIf="signUpForm.get('username').errors['required']">This field is required!</span>
+
+            </span>
+             </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input type="text" formControlName="email" ngModel id="email" class="form-control">
+            <span *ngIf="signUpForm.get('email')?.invalid &&signUpForm.get('email')?.touched" style="color: red;">Email is not valide!</span>
+          
+          </div>
+          <div formGroupName="adressDetails" >
+            <div class="form-group">
+              <label for="adress">Address</label>
+              <input type="text" formControlName="adress" ngModel id="adress" class="form-control">
+              <span *ngIf="signUpForm.get('adressDetails.adress')?.invalid &&signUpForm.get('adressDetails.adress')?.touched" style="color: red;">Adress is not valide!</span>
+            
+            </div>
+            <div class="form-group">
+              <label for="zip">Zip code</label>
+              <input type="text" formControlName="zip" ngModel id="zip" class="form-control">
+              <span *ngIf="signUpForm.get('adressDetails.zip')?.invalid &&signUpForm.get('adressDetails.zip')?.touched" style="color: red;">Zip code is not valide!</span>
+            
+            </div>
+          </div>
+          
+          <div class="radio" *ngFor="let gender of genders">
+            <label>
+              <input type="radio" formControlName="gender" [value]="gender">{{ gender }}
+            </label>
+          </div>
+          <div formArrayName="jobs">
+            <h4>Your priveous Jobs</h4>
+            <button class="btn btn-default" type="button" (click)="handleAddJob()">Add Job</button>
+            <div class="form-group" *ngFor="let jobControl of getJobs().controls; let i = index">
+              <input type="text" class="form-control" [formControlName]="i">
+            </div>
+          </div>
+          <button class="btn btn-primary" [disabled]="!signUpForm.valid" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>

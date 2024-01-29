@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <form (ngSubmit)="onSubmit()" #f="ngForm">
+          <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" ngModel required name="username" class="form-control">
+            </div>
+            <button class="btn btn-default" type="button">Suggest an Username</button>
+          
+            <div class="form-group">
+              <label for="email">Mail</label>
+              <input type="email" #email="ngModel" ngModel required email name="email" id="email" class="form-control">
+              <span *ngIf="email.invalid&&email.touched" style="color: red"> Field is not valide!</span>
+            </div>
+            
+          </div>
+          <span *ngIf="userData.invalid && userData.touched" style="color: red;"> user data is invalide!</span>
+          <div class="form-group">
+            <label for="secret">Secret Questions</label>
+            <select id="secret" [ngModel]="defaultValue" required name="secret" class="form-control">
+              <option value="pet">Your first Pet?</option>
+              <option value="teacher">Your first teacher?</option>
+            </select>
+          </div>
+          <div *ngFor="let gender of genders">
+            <label>
+              <input type="radio" name="gender" ngmodel [value]="gender" required>
+              {{ gender }}
+           
+            </label>
+          </div>
+          <button class="btn btn-primary" [disabled]="!f.valid" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>

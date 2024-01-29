@@ -1,0 +1,8 @@
+<button class="square"
+        [class.disabled]="!enabled"
+        (click)="handleClick()"
+        [disabled]="!enabled"
+        [ngClass]="getColor(text)"
+>
+  {{ text }}
+</button>

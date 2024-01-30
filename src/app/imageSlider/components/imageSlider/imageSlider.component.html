@@ -1,0 +1,23 @@
+<div class="slider">
+  <div>
+    <div (click)="goToPrevious()" class="leftArrow">❰</div>
+    <div (click)="goToNext()" class="rightArrow">❱</div>
+  </div>
+  <div class="slide" [ngStyle]="{ 'background-image': getCurrentSlideUrl() }">
+    <div class="carousel-caption d-none d-md-block bg-light text-primary">
+      <h5>
+        {{ getSlide(currentIndex).title }}
+      </h5>
+      <p>{{ getSlide(currentIndex).description }}</p>
+    </div>
+  </div>
+  <div class="dotsContainer">
+    <div
+      *ngFor="let slide of slides; let slideIndex = index"
+      [ngClass]="currentIndex == slideIndex ? 'dot dot-active' : 'dot'"
+      (click)="goToSlide(slideIndex)"
+    >
+      ●
+    </div>
+  </div>
+</div>

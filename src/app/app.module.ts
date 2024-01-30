@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { HTTP_INTERCEPTORS, HttpClientModule } from  '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HighLightDirective } from './components/directives/highLihgtDirective';
@@ -38,14 +38,14 @@ import { HomeComponent } from './components/animations/home/home.component';
 import { AboutComponent } from './components/animations/about/about.component';
 import { OpenCloseComponent } from './components/animations/open-close/open-close.component';
 import { SliderComponent } from './components/animations/slider/slider.component';
-import {  HerosGroupComponent } from './components/animations/filter/heros-groups.component';
+import { HerosGroupComponent } from './components/animations/filter/heros-groups.component';
 import { HeroListGroupComponent } from './components/animations/filter/hero-list-group/hero-list-group.component';
 import { HeroGroupComponent } from './components/animations/filter/hero-group/hero-group.component';
 import { TictactoeComponent } from './components/games/tictactoe/tictactoe.component';
 import { GamesComponent } from './components/games/games.component';
 import { BoardComponent } from './components/games/tictactoe/board/board.component';
 import { SquareComponent } from './components/games/tictactoe/square/square.component';
- 
+import { ImageSliderModule } from './imageSlider/imageSlider.module';
 
 @NgModule({
   declarations: [
@@ -86,7 +86,7 @@ import { SquareComponent } from './components/games/tictactoe/square/square.comp
     TictactoeComponent,
     GamesComponent,
     BoardComponent,
-    SquareComponent
+    SquareComponent,
   ],
   imports: [
     BrowserModule,
@@ -94,18 +94,21 @@ import { SquareComponent } from './components/games/tictactoe/square/square.comp
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ImageSliderModule,
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: LoggingInterceptorService,
-    multi: true
-  },
-  {
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptorService,
-    multi: true
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingInterceptorService,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

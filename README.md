@@ -2,10 +2,6 @@
 
 This project was generated with Angular CLI version 15.2.4.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
-
 ## Templates and Data Binding
 
 Interpolation and expressions
@@ -61,3 +57,7 @@ Async pipe
 ![Screenshot of a http client and observables section.](/images/observables.png)
 
 and more ...
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.

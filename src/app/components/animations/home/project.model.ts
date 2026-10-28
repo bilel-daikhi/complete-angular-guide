@@ -1,6 +1,6 @@
 import { ProjectImage } from "./projectImage.model";
 
-export interface SBSAProject {
+export interface MyProject {
   client: string;
   description_en: string;
   description_fr: string;

@@ -5,3 +5,24 @@ button:focus {
 .navbar .dropdown-menu .form-control {
     width: 200px;
 }
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #0d6efd;
+  text-decoration: none;
+  font-family: 'Segoe UI', sans-serif;
+  transition: color 0.2s ease;
+}
+
+.logo-text:hover {
+  color: #084298;
+}
+
+.logo-dot {
+  color: #212529;
+}

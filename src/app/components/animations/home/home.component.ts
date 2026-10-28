@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SlideInterface } from 'src/app/imageSlider/types/slide.interface';
 import { ProjectsService } from './projects.service';
-import { SBSAProject } from './project.model';
+import { MyProject } from './project.model';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     this.projectsService.getProjetsLandingPage().subscribe({
       next: (result: any) => {
         result.map((item: any) => {
-          let newProject: SBSAProject;
+          let newProject: MyProject;
           newProject = item;
           if (item.images) {
             let imageLanding = item.images?.filter(

@@ -1,4 +1,4 @@
-# SBSA Angular Recap
+# Angular Recap
 
 This project was generated with Angular CLI version 15.2.4.
 
